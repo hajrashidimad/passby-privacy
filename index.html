@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PassBy privacy policy</title>
+<style>
+  body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; max-width: 42rem; margin: 2rem auto; padding: 0 1rem; line-height: 1.55; color: #1b1b1b; background: #fff; }
+  h1 { font-size: 1.6rem; } h2 { font-size: 1.15rem; margin-top: 1.6rem; }
+  code { background: #f2f2f2; padding: 0 .25rem; border-radius: 3px; }
+  .muted { color: #555; font-size: .9rem; }
+</style>
+</head>
+<body>
+<h1>PassBy privacy policy</h1>
+<p class="muted">Last updated: 2026-11-05</p>
+
+<p>PassBy is a reminders app: you note something for a place, and the app reminds you when you arrive there, pass nearby, or leave a place.</p>
+
+<h2>What PassBy stores, and where</h2>
+<ul>
+  <li><strong>Your reminders and places</strong> (text, coordinates, the mode you chose, when they fired) are stored in a database on your phone only. They are included in Android's regular app backup if you have backups turned on; PassBy does not run its own backup or sync.</li>
+  <li><strong>Your location</strong> is used on your phone only. PassBy asks Android's geofencing service to watch the places you chose; Android tells PassBy when you enter or leave one. PassBy does not record your position history, and your exact position never leaves your phone (a place search sends only a rough area, see below).</li>
+  <li><strong>Settings</strong> (defaults, quiet hours, whether you completed the first-run screens) are stored on your phone.</li>
+</ul>
+
+<h2>What leaves your phone</h2>
+<ul>
+  <li><strong>Place search.</strong> When you type a place or address in the search box and press search, that text is sent to OpenStreetMap's Nominatim service (<code>nominatim.openstreetmap.org</code>) to find matching places, together with a rough area so that places near you come first: a rectangle about 40&nbsp;km across, around your position rounded to about 10&nbsp;km. The area comes from your phone's most recent location (at most an hour old), or from your Home when there is none; with neither, only the text is sent. Your exact position and your reminders are never sent. Nominatim's own privacy policy applies to that request: <a href="https://osmfoundation.org/wiki/Privacy_Policy">osmfoundation.org/wiki/Privacy_Policy</a>.</li>
+  <li><strong>Second try with Google.</strong> When OpenStreetMap finds nothing or does not answer, the same text and rough area are passed to Android's built-in geocoder, which Google runs on phones with Google Play services. Google's privacy policy applies to that request: <a href="https://policies.google.com/privacy">policies.google.com/privacy</a>.</li>
+  <li><strong>The map (Google Maps).</strong> When a place search shows results, a map under them shows where they are, so you can move the pin onto the exact spot. To draw it, the Google Maps SDK inside PassBy downloads map images from Google for the area on screen: the area around the search results, and wherever you then move the map. As in every app that uses this SDK, Google also receives your IP address, details about the device (model, Android version), the SDK's version, a pseudonymous identifier the SDK uses to count its daily users, crash reports from the SDK, and how you move and zoom the map. The map never centres on your position, and the blue dot for your position is drawn by PassBy on the phone: its coordinates are not sent. PassBy loads the map only once a search has results; without a search, nothing goes to Google Maps. Google's privacy policy applies: <a href="https://policies.google.com/privacy">policies.google.com/privacy</a>.</li>
+  <li>Nothing else. PassBy has no account system, no analytics, no advertising, no crash reporting, and no servers of its own.</li>
+</ul>
+
+<h2>Permissions PassBy asks for</h2>
+<ul>
+  <li><strong>Location, "Allow all the time".</strong> Needed so Android can notify PassBy when you are near a place while the app is closed. Without it, reminders cannot fire.</li>
+  <li><strong>Notifications.</strong> Reminders are delivered as notifications.</li>
+  <li><strong>Voice search.</strong> The microphone in the place search hands over to your phone's speech recognition app (Google's, on most phones). PassBy asks it to work on the phone when it can, and receives only the recognised words, which then go through the place search above. PassBy itself never records audio and has no microphone permission.</li>
+  <li><strong>Internet.</strong> Only for the place search and its map, described above.</li>
+  <li><strong>Run after reboot.</strong> To re-register your places with Android's geofencing service, which forgets them when the phone restarts.</li>
+</ul>
+
+<h2>Deleting your data</h2>
+<p>Delete a reminder or a place in the app, or uninstall PassBy: everything is removed from your phone. There is nothing to delete elsewhere.</p>
+
+<h2>Contact</h2>
+<p>Questions about this policy: write to <a href="mailto:hajrashidimad.dev@gmail.com">hajrashidimad.dev@gmail.com</a>.</p>
+</body>
+</html>
